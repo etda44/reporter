@@ -6,11 +6,11 @@
 </head>
 
 <body>
-
+    {include file="nav.tpl"}
     <div class="img-container">
 
         <div class="container">
-            {include file="nav.tpl"}
+
             <!-- 自動載入 $op 對應的樣板檔 -->
             {include file="op_`$op`.tpl"}
         </div>

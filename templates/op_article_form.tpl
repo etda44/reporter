@@ -1,6 +1,10 @@
+<script src="js/languages/jquery.validationEngine-zh_TW.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css">
+
 <script src="ckeditor/ckeditor.js"></script>
 
-<form action="admin.php" method="post" enctype="multipart/form-data">
+<form action="admin.php" method="post" enctype="multipart/form-data" id="myform">
     <div class="form-group">
         <label for="title" class="col-form-label">文章標題</label>
         <input type="text" class="form-control" name="title" id="title" placeholder="請輸入文章標題">
