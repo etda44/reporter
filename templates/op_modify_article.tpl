@@ -7,11 +7,11 @@
 <form action="admin.php" method="post" enctype="multipart/form-data" id="myform">
     <div class="form-group">
         <label for="title" class="col-form-label">文章標題</label>
-        <input type="text" class="form-control validate[required]" name="title" id="title" placeholder="請輸入文章標題">
+        <input type="text" class="form-control validate[required]" name="title" id="title" placeholder="請輸入文章標題" value="{$article.title}">
     </div>
     <div class="form-group">
         <label for="content" class="col-form-label">文章內容</label>
-        <textarea name="content" id="content" rows="20" class="form-control validate[required, minSize[10], maxSize[50]]" placeholder="請輸入文章內容"></textarea>
+        <textarea name="content" id="content" rows="20" class="form-control validate[required, minSize[10], maxSize[50]]" placeholder="請輸入文章內容" >{$article.content}</textarea>
     </div>
     <div class="form-group">
         <label for="title" class="col-form-label">封面圖</label>
@@ -22,17 +22,19 @@
     </div>
 
     <div class="text-center">
-        <button type="submit" class="btn btn-primary">儲存</button>
+        <input type="hidden" name="sn" value="{$article.sn}">
+        <input type="hidden" name="op" value="update">
+        <input type="hidden" name="username" value="{$smarty.session.username}">
+        <button type="submit" class="btn btn-primary">更新</button>
+
     </div>
-    <input type="hidden" name="op" value="insert">
-    <input type="hidden" name="username" value="{$smarty.session.username}">
 
 </form>
 
 <script>
     CKEDITOR.replace('content');
     $(document).ready(function () {
-        $('#myform').validationEngine({ promptPosition: "bottomLeft" });
+        $('#myform').validationEngine();
     });
 
 </script>

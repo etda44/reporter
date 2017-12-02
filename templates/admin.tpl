@@ -7,13 +7,8 @@
 
 <body>
     {include file="nav.tpl"}
-    <div class="img-container">
-
-        <div class="container">
-
-            <!-- 自動載入 $op 對應的樣板檔 -->
-            {include file="op_`$op`.tpl"}
-        </div>
+    <div class="container">
+        {include file="op_`$op`.tpl"}
     </div>
     {include file="footer.tpl"}
 

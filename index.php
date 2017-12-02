@@ -36,22 +36,6 @@ switch ($op) {
 
 require_once 'footer.php';
 
-//讀出單一文章
-function show_article($sn)
-{
-    require_once 'HTMLPurifier/HTMLPurifier.auto.php';
-    $config   = HTMLPurifier_Config::createDefault();
-    $purifier = new HTMLPurifier($config);
-
-    global $db, $smarty;
-    $sql             = "SELECT * FROM `article` WHERE `sn`='$sn'";
-    $result          = $db->query($sql) or die($db->error);
-    $data            = $result->fetch_assoc();
-    $data['content'] = $purifier->purify($data['content']);
-    $smarty->assign('article', $data);
-
-}
-
 //讀出所有文章
 function list_article()
 {
